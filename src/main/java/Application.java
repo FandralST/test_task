@@ -24,7 +24,7 @@ public class Application {
         System.out.println("Сравнение голосов");
         System.out.println(compareVoice(firstKotik, secondKotik));
         System.out.println("Количество котиков");
-        System.out.println(firstKotik.getCount());
+        System.out.println(Kotik.getCount());
     }
 
     static boolean compareVoice(Kotik kotik1, Kotik kotik2){

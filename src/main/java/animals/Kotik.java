@@ -178,7 +178,7 @@ public class Kotik {
         this.weight = weight;
     }
 
-    public int getCount() {
+    public static int getCount() {
         return count;
     }
 
