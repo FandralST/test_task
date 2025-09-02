@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class Kotik {
 
-    private static int COUNT;
+    private static int count;
 
-    private final int METHODS = 5;
+    private static final int METHODS = 5;
 
     private String name;
 
@@ -19,7 +19,7 @@ public class Kotik {
     private int weight;
 
     public Kotik() {
-        COUNT++;
+        count++;
     }
 
     public Kotik(String name, String voice, int satiety, int weight) {
@@ -27,7 +27,7 @@ public class Kotik {
         this.voice = voice;
         this.satiety = satiety;
         this.weight = weight;
-        COUNT++;
+        count++;
     }
 
     public boolean play() {
@@ -77,7 +77,7 @@ public class Kotik {
 
 
     private boolean checkSatiety() {
-        if (this.satiety == 0) {
+        if (this.satiety <= 0) {
             System.out.println("GIVE ME SOME FOOD PLS");
             return false;
         }
@@ -97,11 +97,11 @@ public class Kotik {
     }
 
 
-    public List<String> liveAnotherDay() {
+    public String[] liveAnotherDay() {
         int action = 0;
         Random rnd = new Random();
         String actionName = "foo";
-        List<String> hourActions = new ArrayList<>();
+        String[] hourActionsArray = new String[24];
         for (int i = 0; i < 24; i++) {
             action = rnd.nextInt(5) + 1;
             switch (action) {
@@ -140,10 +140,10 @@ public class Kotik {
                     } else actionName = "walk";
                     break;
             }
-            hourActions.add(i + " - " + actionName);
+            hourActionsArray[i] = i + " - " + actionName;
         }
 
-        return hourActions;
+        return hourActionsArray;
     }
 
     public String getName() {
@@ -178,8 +178,8 @@ public class Kotik {
         this.weight = weight;
     }
 
-    public static int getCOUNT() {
-        return COUNT;
+    public int getCOUNT() {
+        return count;
     }
 
 }

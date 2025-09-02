@@ -14,7 +14,7 @@ public class Application {
         secondKotik.setSatiety(10);
         secondKotik.setWeight(6);
 
-        List<String> firstKotikActions = firstKotik.liveAnotherDay();
+        String[] firstKotikActions = firstKotik.liveAnotherDay();
         for (String action : firstKotikActions) {
             System.out.println(action);
         }
@@ -24,7 +24,7 @@ public class Application {
         System.out.println("Сравнение голосов");
         System.out.println(compareVoice(firstKotik, secondKotik));
         System.out.println("Количество котиков");
-        System.out.println(Kotik.getCOUNT());
+        System.out.println(firstKotik.getCOUNT());
     }
 
     static boolean compareVoice(Kotik kotik1, Kotik kotik2){
