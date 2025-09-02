@@ -1,5 +1,3 @@
-package org.example;
-
 import animals.Kotik;
 
 import java.util.List;
